@@ -16,14 +16,14 @@ jobs:
             echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
             docker push satyam19arya/todo-app:$version
 
-  Update_menifest:
+  Update_manifest:
     docker:
       - image: cimg/base:2023.06
     steps:
       - checkout
       - setup_remote_docker
       - run:
-          name: Updating Menifest file 
+          name: Updating Manifest file 
           command: |
             TAG=$CIRCLE_BUILD_NUM
             ((TAG--))
@@ -40,6 +40,6 @@ workflows:
   GitOpsflow:
     jobs:
       - build_and_push
-      - Update_menifest:
+      - Update_manifest:
           requires:
             - build_and_push
