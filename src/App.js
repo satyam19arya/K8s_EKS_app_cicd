@@ -85,7 +85,7 @@ class App extends Component {
                         fontSize: "2rem",
                     }}
                 >
-                  TODO APP
+                My TODO APP
                 </Row>
   
                 <hr />
